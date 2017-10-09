@@ -1,0 +1,7 @@
+http://labs.timtom.ch/library-webscraping/01-introduction/
+
+$x("/html/body/div/h1[@id='introduction']")
+
+openrefine
+
+import.io
