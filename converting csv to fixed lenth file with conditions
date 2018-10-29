@@ -1,0 +1,20 @@
+w = {}
+fhand=open('C:\\Users\\thara.savio\\Downloads\\Sacramentorealestatetransactions.csv')
+for line in fhand:
+    for col_nr, col in enumerate(line.strip().split(",")):
+        w[col_nr] = max( w.get(col_nr,0), len(col))
+       
+
+f1=open("file7.txt","w")
+fhand=open('C:\\Users\\thara.savio\\Downloads\\Sacramentorealestatetransactions.csv')
+for line in fhand:
+    #if not line.startswith("3526"):
+        #continue
+    if not line.startswith(('51','2196','3526')):
+    
+        for col_nr, col in enumerate(line.strip().split(",")):
+        # the :<{w[col_nr]+5}} - part is left-adjusting to certain width 
+            f1.write(f"{col:<{w[col_nr]+5}}") # 5 additional spaces
+        f1.write("\n")
+    
+print("end")
